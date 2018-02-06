@@ -44,7 +44,7 @@ public class LoginPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				System.out.println("login : " + mail.getText() + ";" + new String(password.getPassword()));
-				fenster.switchJPanel(new StartScreen(), "Start");
+				fenster.switchJPanel(new StartScreen(), "Start", 1000, 800);
 			}
 
 		};
@@ -52,7 +52,7 @@ public class LoginPanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				fenster.switchJPanel(new RegisterPanel(fenster), "Registrierung");
+				fenster.switchJPanel(new RegisterPanel(fenster), "Registrierung", 950, 220);
 			}
 		};
 		loginBtn.addActionListener(loginListener);
