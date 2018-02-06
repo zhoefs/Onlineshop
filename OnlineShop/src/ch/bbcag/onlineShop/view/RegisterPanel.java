@@ -1,4 +1,4 @@
-package onlineShop;
+package ch.bbcag.onlineShop.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -89,6 +89,7 @@ public class RegisterPanel extends JPanel {
 		registerBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
+				
 				System.out.println("Registrierung abgeschlossen");
 			}
 		});

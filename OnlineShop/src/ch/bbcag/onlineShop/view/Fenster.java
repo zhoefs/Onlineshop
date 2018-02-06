@@ -1,4 +1,4 @@
-package onlineShop;
+package ch.bbcag.onlineShop.view;
 
 import java.awt.BorderLayout;
 
