@@ -19,5 +19,8 @@ public class Controller {
 	public Benutzer getBenutzerByEmail(String email) {
 		return benutzerDao.findBenutzerByEmail(email);
 	}
-
+	
+	public void registerBenutzer(Benutzer benutzer) {
+		benutzerDao.insertBenutzer(benutzer);
+	}
 }

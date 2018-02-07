@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import ch.bbcag.onlineShop.model.Adresse;
 
@@ -49,8 +50,40 @@ public class AdresseJdbcDao implements AdresseDao {
 	}
 
 	@Override
-	public void insertAdresse(Adresse adresse) {
-		// TODO Auto-generated method stub
+	public int insertAdresse(Adresse adresse) {
+		String sql = "insert into onlineshop.adresse (strasse, ort, plz) values (?,?,?)";
+		Connection con = ConnectionFactory.getInstance().getConnection();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+	    int newPk = 0;
+		try {
+			ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			ps.setString(1, adresse.getStrasse());
+			ps.setString(2, adresse.getOrt());
+			ps.setInt(3,adresse.getPlz());
+			ps.executeUpdate();
+			rs = ps.getGeneratedKeys();
+			if (rs.next()) {
+				newPk = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if (ps != null) {
+					ps.close();
+				}
+				
+				if (rs != null) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return newPk;
 		
 	}
 }

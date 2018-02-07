@@ -11,6 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import ch.bbcag.onlineShop.controller.Controller;
+import ch.bbcag.onlineShop.model.Benutzer;
+
 public class LoginPanel extends JPanel {
 
 	private static final long serialVersionUID = -9132440903370725395L;
@@ -52,6 +55,10 @@ public class LoginPanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent event) {
+				//Benutzer password = Controller.getController().getPasswordByEmail(email.getText());
+				//name.setText(benutzer.toString() );
+				//revalidate();
+				
 				fenster.switchJPanel(new RegisterPanel(fenster), "Registrierung", 950, 220);
 			}
 		};

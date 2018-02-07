@@ -12,6 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import ch.bbcag.onlineShop.controller.Controller;
+import ch.bbcag.onlineShop.model.Adresse;
+import ch.bbcag.onlineShop.model.Benutzer;
+
 public class RegisterPanel extends JPanel {
 
 	private static final long serialVersionUID = -5345921730919202354L;
@@ -33,6 +37,7 @@ public class RegisterPanel extends JPanel {
 	JLabel strasseLabel = new JLabel("Strasse");
 	JLabel mailLabel = new JLabel("Mail");
 	JLabel passwordLabel = new JLabel("Password");
+	JLabel plzLabel = new JLabel("PLZ");
 
 	String[] anreden = new String[] { "Herr", "Frau" };
 
@@ -42,7 +47,8 @@ public class RegisterPanel extends JPanel {
 	JTextField strasse;
 	JTextField mail;
 	JPasswordField password;
-
+	JTextField plz;
+	
 	public RegisterPanel(Fenster fenster) {
 		this.setLayout(new BorderLayout());
 
@@ -67,6 +73,7 @@ public class RegisterPanel extends JPanel {
 		strasse = new JTextField(20);
 		mail = new JTextField(20);
 		password = new JPasswordField(20);
+		plz = new JTextField(5);
 
 		this.leftLabelPanel.add(anredeLabel);
 		this.leftLabelPanel.add(nameLabel);
@@ -77,10 +84,12 @@ public class RegisterPanel extends JPanel {
 		this.leftTextFieldsPanel.add(name);
 		this.leftTextFieldsPanel.add(wohnort);
 		this.leftTextFieldsPanel.add(strasse);
-
+		
+		this.rightLabelPanel.add(plzLabel);
 		this.rightLabelPanel.add(mailLabel);
 		this.rightLabelPanel.add(passwordLabel);
-
+		
+		this.rightTextFieldsPanel.add(plz);
 		this.rightTextFieldsPanel.add(mail);
 		this.rightTextFieldsPanel.add(password);
 
@@ -89,6 +98,17 @@ public class RegisterPanel extends JPanel {
 		registerBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
+				Benutzer b = new Benutzer();
+				b.setEmail(mail.getText());
+				b.setName(name.getText());
+				b.setPasswort(new String(password.getPassword()));
+				Adresse a = new Adresse();
+				a.setOrt(wohnort.getText());
+				a.setStrasse(strasse.getText());
+				a.setplz(PLZ.getText());
+				b.setAdresse(a);
+				Controller.getController().registerBenutzer(b);				
+				
 				
 				System.out.println("Registrierung abgeschlossen");
 			}

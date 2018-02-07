@@ -14,7 +14,10 @@ public class BenutzerJdbcDao implements BenutzerDao {
 
 	@Override
 	public void insertBenutzer(Benutzer benutzer) {
-		String sql = "insert into onlineshop.benutzer (name, email, passwort) values (?, ?, ?)";
+		// insert address
+		int adresse_id = adresseDao.insertAdresse(benutzer.getAdresse());
+		
+		String sql = "insert into onlineshop.benutzer (name, email, passwort, adresse_id) values (?, ?, ?, ?)";
 		Connection con = ConnectionFactory.getInstance().getConnection();
 		PreparedStatement ps = null;
 		try {
@@ -22,8 +25,9 @@ public class BenutzerJdbcDao implements BenutzerDao {
 			ps.setString(1, benutzer.getName());
 			ps.setString(2, benutzer.getEmail());
 			ps.setString(3, benutzer.getPasswort());
-			
+			ps.setInt(4, adresse_id);
 			ps.executeUpdate();
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
