@@ -105,7 +105,7 @@ public class RegisterPanel extends JPanel {
 				Adresse a = new Adresse();
 				a.setOrt(wohnort.getText());
 				a.setStrasse(strasse.getText());
-				a.setplz(PLZ.getText());
+				a.setPlz(plz.getText());
 				b.setAdresse(a);
 				Controller.getController().registerBenutzer(b);				
 				
