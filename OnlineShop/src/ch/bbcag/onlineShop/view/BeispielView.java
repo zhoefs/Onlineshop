@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import ch.bbcag.onlineShop.controller.Controller;
+import ch.bbcag.onlineShop.controller.UserController;
 import ch.bbcag.onlineShop.model.Benutzer;
 
 public class BeispielView extends JFrame {
@@ -33,7 +33,7 @@ public class BeispielView extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Benutzer benutzer = Controller.getController().getBenutzerByEmail(email.getText());
+				Benutzer benutzer = UserController.getController().getBenutzerByEmail(email.getText());
 				name.setText(benutzer.toString() );
 				revalidate();
 			}
