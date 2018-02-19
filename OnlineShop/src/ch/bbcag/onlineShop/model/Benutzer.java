@@ -2,10 +2,10 @@ package ch.bbcag.onlineShop.model;
 
 public class Benutzer {
 	private int id;
-	private String name;
-	private String email;
-	private String passwort;
-	private Adresse adresse;
+	private String name = "";
+	private String email = "";
+	private String passwort = "";
+	private Adresse adresse = new Adresse();
 	
 	@Override
 	public String toString() {
