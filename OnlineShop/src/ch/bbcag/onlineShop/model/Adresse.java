@@ -3,9 +3,9 @@ package ch.bbcag.onlineShop.model;
 public class Adresse {
 
 	private int id;
-	private String strasse;
-	private String ort;
-	private int plz;
+	private String strasse = "";
+	private String ort = "";
+	private String plz = "";
 
 	@Override
 	public String toString() {
@@ -36,11 +36,11 @@ public class Adresse {
 		this.ort = ort;
 	}
 
-	public int getPlz() {
+	public String getPlz() {
 		return plz;
 	}
 
-	public void setPlz(int plz) {
+	public void setPlz(String plz) {
 		this.plz = plz;
 	}
 

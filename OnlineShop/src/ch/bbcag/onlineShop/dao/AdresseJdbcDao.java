@@ -26,7 +26,7 @@ public class AdresseJdbcDao implements AdresseDao {
 				adresse.setId(rs.getInt("id"));
 				adresse.setStrasse(rs.getString("strasse"));
 				adresse.setOrt(rs.getString("ort"));
-				adresse.setPlz(rs.getInt("plz"));
+				adresse.setPlz(rs.getString("plz"));
 				break;
 			}
 		} catch (SQLException e) {
@@ -60,7 +60,7 @@ public class AdresseJdbcDao implements AdresseDao {
 			ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			ps.setString(1, adresse.getStrasse());
 			ps.setString(2, adresse.getOrt());
-			ps.setInt(3,adresse.getPlz());
+			ps.setString(3,adresse.getPlz());
 			ps.executeUpdate();
 			rs = ps.getGeneratedKeys();
 			if (rs.next()) {
