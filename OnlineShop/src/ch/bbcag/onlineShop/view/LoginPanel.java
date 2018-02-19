@@ -11,8 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import ch.bbcag.onlineShop.controller.Controller;
-import ch.bbcag.onlineShop.model.Benutzer;
+import ch.bbcag.onlineShop.controller.UserController;
 
 public class LoginPanel extends JPanel {
 
@@ -22,6 +21,8 @@ public class LoginPanel extends JPanel {
 
 	JTextField mail;
 	JPasswordField password;
+	JLabel fehlerAnzeige;
+	private final UserController controller = UserController.getController();
 
 	public LoginPanel(Fenster fenster) {
 		this.setLayout(new BorderLayout());
@@ -29,12 +30,14 @@ public class LoginPanel extends JPanel {
 		JPanel west = new JPanel(new GridLayout(2, 1));
 		JPanel east = new JPanel(new GridLayout(2, 1));
 		JPanel south = new JPanel(new GridLayout(1, 2));
-
+		JPanel north = new JPanel(new GridLayout(1, 1));
+		
 		west.add(new JLabel("Mail"), BorderLayout.NORTH);
 		west.add(new JLabel("Passwort"), BorderLayout.SOUTH);
-
+		
 		mail = new JTextField(20);
 		password = new JPasswordField(20);
+		fehlerAnzeige = new JLabel();
 
 		east.add(mail, BorderLayout.NORTH);
 		east.add(password, BorderLayout.SOUTH);
@@ -42,28 +45,29 @@ public class LoginPanel extends JPanel {
 		loginBtn = new JButton("Login");
 		registerBtn = new JButton("Registrieren");
 
-		ActionListener loginListener = new ActionListener() {
-
+		loginBtn.addActionListener(new ActionListener() {
+			
 			@Override
-			public void actionPerformed(ActionEvent event) {
+			public void actionPerformed(ActionEvent e) {
 				System.out.println("login : " + mail.getText() + ";" + new String(password.getPassword()));
-				fenster.switchJPanel(new StartScreen(), "Start", 1000, 800);
+				if(controller.isValidLogin(mail.getText(), new String(password.getPassword()))) {
+					fenster.switchJPanel(new StartScreen(), "Start", 1000, 800);
+				} else {
+					//TODO: Fehler auf GUI darstellen.
+					fehlerAnzeige.setText("Mail oder Passwort ist ungültig.");
+					north.add(fehlerAnzeige);
+					System.err.println("Login for " + mail.getText() + " failed!");
+				}
 			}
-
-		};
-		ActionListener registerListener = new ActionListener() {
-
+		});
+		registerBtn.addActionListener(new ActionListener() {
+			
 			@Override
-			public void actionPerformed(ActionEvent event) {
-				//Benutzer password = Controller.getController().getPasswordByEmail(email.getText());
-				//name.setText(benutzer.toString() );
-				//revalidate();
-				
+			public void actionPerformed(ActionEvent e) {
+				revalidate();
 				fenster.switchJPanel(new RegisterPanel(fenster), "Registrierung", 950, 220);
 			}
-		};
-		loginBtn.addActionListener(loginListener);
-		registerBtn.addActionListener(registerListener);
+		});
 
 		south.add(loginBtn, BorderLayout.WEST);
 		south.add(registerBtn, BorderLayout.EAST);

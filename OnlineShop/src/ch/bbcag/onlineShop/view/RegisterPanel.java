@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import ch.bbcag.onlineShop.controller.Controller;
+import ch.bbcag.onlineShop.controller.UserController;
 import ch.bbcag.onlineShop.model.Adresse;
 import ch.bbcag.onlineShop.model.Benutzer;
 
@@ -107,7 +107,7 @@ public class RegisterPanel extends JPanel {
 				a.setStrasse(strasse.getText());
 				a.setPlz(plz.getText());
 				b.setAdresse(a);
-				Controller.getController().registerBenutzer(b);				
+				UserController.getController().registerBenutzer(b);				
 				
 				
 				System.out.println("Registrierung abgeschlossen");
