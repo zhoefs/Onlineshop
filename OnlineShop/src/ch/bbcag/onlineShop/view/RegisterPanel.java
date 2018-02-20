@@ -107,12 +107,20 @@ public class RegisterPanel extends JPanel {
 				a.setStrasse(strasse.getText());
 				a.setPlz(plz.getText());
 				b.setAdresse(a);
-				UserController.getController().registerBenutzer(b);				
+				UserController.getController().registerBenutzer(b);	
 				
 				
 				System.out.println("Registrierung abgeschlossen");
+				
+				HomeMenu gui = new HomeMenu();
+				gui.pack();
+				gui.setResizable(false);
+				gui.setVisible(true);
+				fenster.setVisible(false);
 			}
 		});
+		
+		
 
 		this.contentPanelLeft.add(leftLabelPanel);
 		this.contentPanelLeft.add(leftTextFieldsPanel);

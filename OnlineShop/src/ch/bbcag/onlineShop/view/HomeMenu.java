@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 import ch.bbcag.onlineShop.helper.IconLoader;
 
@@ -18,13 +17,14 @@ public class HomeMenu extends JFrame {
 	private JButton nike1 = new JButton("Nike Air Force 1 Midi Bearbeiten");
 	private JButton nike2 = new JButton("Nike Air Hurache Essential Bearbeiten");
 	private JButton nike3 = new JButton("Nike Metcon 4 Bearbeiten");
-	private JTextArea beschreibung1 = new JTextArea("BLABLABLA");
-	private JTextArea beschreibung2 = new JTextArea("Der Nike Air Huarache Essencial ist einer dieser Schuhe, die einen starken Einfluss auf die Erfolgsgeschichte mit dem Swoosh in den frühen 90ern hatten und den Sportswear- und Sneakermarkt noch Heute dominieren. ");
-	private JTextField beschreibung3 = new JTextField("BLABLABLA");
-
+	private JTextArea beschreibung1 = new JTextArea(5,20);
+	private JTextArea beschreibung2 = new JTextArea(5,20);
+	private JTextArea beschreibung3 = new JTextArea(5,20);
+	
 	public static void main(String[] args) {
 		HomeMenu gui = new HomeMenu();
 		gui.pack();
+		gui.setResizable(false);
 		gui.setVisible(true);
 	}
 
@@ -42,6 +42,29 @@ public class HomeMenu extends JFrame {
 		imagePanel.add(nike2);
 		imagePanel.add(nike3);
 
+		beschreibung1.setText(""
+				+ ""
+				+ ""
+				+ "");
+		
+		beschreibung2.setText("Der Nike Air Huarache Essencial ist einer"
+				+ "dieser Schuhe, die einen starken Einfluss auf"
+				+ "die Erfolgsgeschichte mit dem Swoosh in den"
+				+ "frühen 90ern hatten und den Sportswear- und Sneaker");
+		
+		beschreibung3.setText(""
+				+ ""
+				+ ""
+				+ "");
+		
+		beschreibung1.setLineWrap(true);
+		beschreibung1.setWrapStyleWord(true);
+		beschreibung2.setLineWrap(true);
+		beschreibung2.setWrapStyleWord(true);
+		beschreibung3.setLineWrap(true);
+		beschreibung3.setWrapStyleWord(true);
+		
+		
 		imagePanel.add(beschreibung1);
 		imagePanel.add(beschreibung2);
 		imagePanel.add(beschreibung3);
