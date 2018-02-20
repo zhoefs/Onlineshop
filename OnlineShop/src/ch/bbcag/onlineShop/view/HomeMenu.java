@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import ch.bbcag.onlineShop.helper.IconLoader;
@@ -14,11 +15,11 @@ import ch.bbcag.onlineShop.helper.IconLoader;
 public class HomeMenu extends JFrame {
 
 	private static final long serialVersionUID = 7107604425259214222L;
-	private JButton nike1 = new JButton("Nike... Bearbeiten");
-	private JButton nike2 = new JButton("Nike... Bearbeiten");
-	private JButton nike3 = new JButton("Nike... Bearbeiten");
-	private JTextField beschreibung1 = new JTextField("BLABLABLA");
-	private JTextField beschreibung2 = new JTextField("BLABLABLA");
+	private JButton nike1 = new JButton("Nike Air Force 1 Midi Bearbeiten");
+	private JButton nike2 = new JButton("Nike Air Hurache Essential Bearbeiten");
+	private JButton nike3 = new JButton("Nike Metcon 4 Bearbeiten");
+	private JTextArea beschreibung1 = new JTextArea("BLABLABLA");
+	private JTextArea beschreibung2 = new JTextArea("Der Nike Air Huarache Essencial ist einer dieser Schuhe, die einen starken Einfluss auf die Erfolgsgeschichte mit dem Swoosh in den frühen 90ern hatten und den Sportswear- und Sneakermarkt noch Heute dominieren. ");
 	private JTextField beschreibung3 = new JTextField("BLABLABLA");
 
 	public static void main(String[] args) {
@@ -31,7 +32,7 @@ public class HomeMenu extends JFrame {
 		setTitle("Home Menu");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		JPanel imagePanel = new JPanel(new GridLayout(3, 3));
+		JPanel imagePanel = new JPanel(new GridLayout(3,3,3,3));
 
 		imagePanel.add(new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_weiss_klein.PNG")));
 		imagePanel.add(new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_weiss_klein.PNG")));
