@@ -27,8 +27,6 @@ public class HomeMenu extends JFrame {
 		setTitle("Home Menu");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		halloTextField.setEditable(false);
-
 		add(sagHalloButton, BorderLayout.NORTH);
 
 		JPanel imagePanel = new JPanel(new GridLayout(0, 3));
