@@ -51,7 +51,7 @@ public class BestellBestaetigungsPanel extends JFrame {
 				LoginPanel login = new LoginPanel(fenster);
 				fenster.add(login, BorderLayout.CENTER);
 				fenster.setVisible(true);
-					setVisible(false);
+				setVisible(false);
 			}
 		});
 

@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -21,8 +22,9 @@ public class BestellPanel extends JFrame {
 
 	private JButton bestellen = new JButton("Bestellen!");
 	private JButton ausloggen = new JButton("Ausloggen");
-	private String[] zahlungsartenListe = { "VISA", "Master Card", "PayPal" };
+	private String[] zahlungsartenListe = { "Zahlungsart:", "VISA", "Master Card", "PayPal" };
 	private JComboBox<String> zahlungsarten = new JComboBox<String>(zahlungsartenListe);
+	private JTextArea beschreibung = new JTextArea(5, 20);
 	private JTextArea kundenInformationen = new JTextArea(5, 20);
 
 	public static void main(String[] args) {
@@ -44,34 +46,55 @@ public class BestellPanel extends JFrame {
 		ausloggenPanel.add(ausloggen);
 		obenRechts.add(ausloggenPanel);
 
+		JPanel zahlungsPanel = new JPanel(new GridLayout(1, 2));
+
 		JPanel zahlungsartPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		zahlungsartPanel.add(zahlungsarten);
-		obenRechts.add(zahlungsartPanel);
+		zahlungsPanel.add(zahlungsartPanel);
 
+		JPanel beschreibungsPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		beschreibungsPanel.add(beschreibung);
+		zahlungsPanel.add(beschreibungsPanel);
+
+		beschreibung.setText("k" + "" + "" + "");
+		beschreibung.setLineWrap(true);
+		beschreibung.setWrapStyleWord(true);
+
+		beschreibung.setText("Zahlungsart:			" + "Wählen Sie hier Ihre Gewünschte Zahlungsart aus. "
+				+ "Ihre Bestellung wird damit Bezahlt.");
+
+		obenRechts.add(zahlungsPanel);
 		add(obenRechts);
-
-		kundenInformationen.setText("k" + "" + "" + "");
-		kundenInformationen.setLineWrap(true);
-		kundenInformationen.setWrapStyleWord(true);
 
 		add(kundenInformationen);
 		
+		kundenInformationen.setLineWrap(true);
+		kundenInformationen.setWrapStyleWord(true);
+
 		JPanel untenRechts = new JPanel();
-		untenRechts.setLayout(new GridBagLayout());
-		untenRechts.add(bestellen);
 		
+		JLabel untenRechtsBackgroundLabel = new JLabel(IconLoader.loadIcon("backgroundPictures/rote-pfeile-zugeschnitten.jpg"));
+		
+		untenRechtsBackgroundLabel.setLayout(null);
+		untenRechtsBackgroundLabel.setOpaque(false);
+		
+		untenRechtsBackgroundLabel.setLayout(new GridBagLayout());
+		untenRechtsBackgroundLabel.add(bestellen);
+		
+		untenRechts.add(untenRechtsBackgroundLabel);
+
 		bestellen.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-					BestellBestaetigungsPanel gui = new BestellBestaetigungsPanel();
-					gui.setSize(500, 400);
-					gui.setResizable(false);
-					gui.setVisible(true);
-					setVisible(false);
+				BestellBestaetigungsPanel gui = new BestellBestaetigungsPanel();
+				gui.setSize(500, 400);
+				gui.setResizable(false);
+				gui.setVisible(true);
+				setVisible(false);
 			}
 		});
-		
+
 		add(untenRechts);
 
 	}
