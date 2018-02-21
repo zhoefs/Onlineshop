@@ -31,10 +31,10 @@ public class LoginPanel extends JPanel {
 		JPanel east = new JPanel(new GridLayout(2, 1));
 		JPanel south = new JPanel(new GridLayout(1, 2));
 		JPanel north = new JPanel(new GridLayout(1, 1));
-		
+
 		west.add(new JLabel("Mail"), BorderLayout.NORTH);
 		west.add(new JLabel("Passwort"), BorderLayout.SOUTH);
-		
+
 		mail = new JTextField(20);
 		password = new JPasswordField(20);
 		fehlerAnzeige = new JLabel();
@@ -46,14 +46,18 @@ public class LoginPanel extends JPanel {
 		registerBtn = new JButton("Registrieren");
 
 		loginBtn.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("login : " + mail.getText() + ";" + new String(password.getPassword()));
-				if(controller.isValidLogin(mail.getText(), new String(password.getPassword()))) {
-					fenster.switchJPanel(new StartScreen(), "Start", 1000, 800);
+				if (controller.isValidLogin(mail.getText(), new String(password.getPassword()))) {
+					HomeMenu gui = new HomeMenu();
+					gui.pack();
+					gui.setResizable(false);
+					gui.setVisible(true);
+					fenster.setVisible(false);
 				} else {
-					//TODO: Fehler auf GUI darstellen.
+					// TODO: Fehler auf GUI darstellen.
 					fehlerAnzeige.setText("Mail oder Passwort ist ungültig.");
 					north.add(fehlerAnzeige);
 					System.err.println("Login for " + mail.getText() + " failed!");
@@ -61,7 +65,7 @@ public class LoginPanel extends JPanel {
 			}
 		});
 		registerBtn.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				revalidate();

@@ -42,20 +42,27 @@ public class HomeMenu extends JFrame {
 		imagePanel.add(nike2);
 		imagePanel.add(nike3);
 
-		beschreibung1.setText(""
-				+ ""
-				+ ""
-				+ "");
+		beschreibung1.setText("Kurtzbeschreibung:			"
+				+ "				"
+				+ "Der Air Force 1 ist ein Basketballschuh des Sportartikelherstellers "
+				+ "Nike. Er wurde 1982 auf den Markt gebracht und "
+				+ "bekannt wurde er vor allem als Streetstyle-Schuh in der "
+				+ "Hip-Hop-Szene. Insgesamt wurden in den letzten 25 Jahren über 1.700 "
+				+ "Modelle in unzähligen verschiedenen Farb- und Materialkombinationen entwickelt.");
 		
-		beschreibung2.setText("Der Nike Air Huarache Essencial ist einer"
+		beschreibung2.setText("Kurtzbeschreibung:			"
+				+ "				"
+				+ "Der Nike Air Huarache Essencial ist einer"
 				+ "dieser Schuhe, die einen starken Einfluss auf"
 				+ "die Erfolgsgeschichte mit dem Swoosh in den"
 				+ "frühen 90ern hatten und den Sportswear- und Sneaker");
 		
-		beschreibung3.setText(""
-				+ ""
-				+ ""
-				+ "");
+		beschreibung3.setText("Kurtzbeschreibung:			"
+				+ "				"
+				+ "Der Metcon 4 Männer Cross Training, Gewichtheber-Schuh "
+				+ "bietet eine starke, stabile Basis, flexible Unterstützung "
+				+ "und extreme Haltbarkeit für eine breite Palette von "
+				+ "Trainingsaktivitäten, von Sprints und Schlitten drücken, Heben und Seilklettern.");
 		
 		beschreibung1.setLineWrap(true);
 		beschreibung1.setWrapStyleWord(true);
