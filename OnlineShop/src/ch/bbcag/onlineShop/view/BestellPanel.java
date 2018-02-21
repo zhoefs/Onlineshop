@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -71,8 +72,16 @@ public class BestellPanel extends JFrame {
 		kundenInformationen.setWrapStyleWord(true);
 
 		JPanel untenRechts = new JPanel();
-		untenRechts.setLayout(new GridBagLayout());
-		untenRechts.add(bestellen);
+		
+		JLabel untenRechtsBackgroundLabel = new JLabel(IconLoader.loadIcon("backgroundPictures/rote-pfeile-zugeschnitten.jpg"));
+		
+		untenRechtsBackgroundLabel.setLayout(null);
+		untenRechtsBackgroundLabel.setOpaque(false);
+		
+		untenRechtsBackgroundLabel.setLayout(new GridBagLayout());
+		untenRechtsBackgroundLabel.add(bestellen);
+		
+		untenRechts.add(untenRechtsBackgroundLabel);
 
 		bestellen.addActionListener(new ActionListener() {
 
