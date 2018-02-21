@@ -20,7 +20,7 @@ public class DesignPanel extends JFrame {
 	private static final long serialVersionUID = 7107604425259214222L;
 
 	private JButton weiter = new JButton("Weiter");
-	private JButton uebernehmen = new JButton("Übernehmen!");
+	private JButton uebernehmen = new JButton("Übernehmen");
 	private JButton ausloggen = new JButton("Ausloggen");
 	private String[] farbteil1Liste = { "Erste Farbe wählen", "schwarz", "weiss"};
 	private JComboBox<String> farbteil1 = new JComboBox<String>(farbteil1Liste);
@@ -42,16 +42,16 @@ public class DesignPanel extends JFrame {
 
 		add(new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_weiss.PNG")));
 
-		JPanel obenRechts = new JPanel(new GridLayout(2, 3));
+		JPanel obenRechts = new JPanel(new GridLayout(0,1));
 		JPanel ausloggenPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		ausloggenPanel.add(ausloggen);
 		obenRechts.add(ausloggenPanel);
 
-		JPanel farbteil1Panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JPanel farbteil1Panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		farbteil1Panel.add(farbteil1);
 		obenRechts.add(farbteil1Panel);
 		
-		JPanel farbteil2Panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		JPanel farbteil2Panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		farbteil2Panel.add(farbteil2);
 		obenRechts.add(farbteil2Panel);
 
@@ -77,23 +77,22 @@ public class DesignPanel extends JFrame {
 		kundenInformationen.setLineWrap(true);
 		kundenInformationen.setWrapStyleWord(true);
 
-		add(kundenInformationen);
-		
 		JPanel untenRechts = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-		untenRechts.add(weiter);
-		JPanel untenlinks = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		
-		untenRechts.setLayout(new GridBagLayout());
-		untenRechts.add(uebernehmen);
-				
+		add(kundenInformationen);
 		add(untenRechts);
 		
+		JPanel untenLinks = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		untenRechts.add(uebernehmen);
+		untenRechts.setLayout(new GridBagLayout());
+		
+		untenRechts.add(weiter);
+				
 		weiter.addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
 				BestellPanel gui = new BestellPanel();
-				gui.setSize(1200, 800);
+				gui.setSize(1155, 739);
 				gui.setResizable(false);
 				gui.setVisible(true);
 				setVisible(false);
