@@ -1,6 +1,7 @@
 package ch.bbcag.onlineShop.view;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
@@ -15,6 +16,7 @@ import ch.bbcag.onlineShop.helper.IconLoader;
 public class HomeMenu extends JFrame {
 
 	private static final long serialVersionUID = 7107604425259214222L;
+	private JButton ausloggen = new JButton("Ausloggen");
 	private JButton nike1 = new JButton("Nike Air Force 1 Midi Bearbeiten");
 	private JButton nike2 = new JButton("Nike Air Hurache Essential Bearbeiten");
 	private JButton nike3 = new JButton("Nike Metcon 4 Bearbeiten");
@@ -32,6 +34,9 @@ public class HomeMenu extends JFrame {
 	public HomeMenu() {
 		setTitle("Home Menu");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		JPanel ausloggenPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+		ausloggenPanel.add(ausloggen);
 
 		JPanel imagePanel = new JPanel(new GridLayout(3,3,3,3));
 
@@ -89,6 +94,7 @@ public class HomeMenu extends JFrame {
 		imagePanel.add(beschreibung2);
 		imagePanel.add(beschreibung3);
 		
-		add(imagePanel, BorderLayout.NORTH);
+		add(ausloggenPanel, BorderLayout.NORTH);
+		add(imagePanel, BorderLayout.CENTER);
 	}
 }
