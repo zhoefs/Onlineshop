@@ -1,6 +1,7 @@
 package ch.bbcag.onlineShop.view;
 
 import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -38,9 +39,21 @@ public class HomeMenu extends JFrame {
 		imagePanel.add(new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_weiss_klein.PNG")));
 		imagePanel.add(new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_weiss_klein.PNG")));
 		
-		imagePanel.add(nike1);
-		imagePanel.add(nike2);
-		imagePanel.add(nike3);
+		JPanel mitteLinks = new JPanel();
+		mitteLinks.setLayout(new GridBagLayout());
+		mitteLinks.add(nike1);
+		
+		JPanel mitte = new JPanel();
+		mitte.setLayout(new GridBagLayout());
+		mitte.add(nike2);
+		
+		JPanel mitteRechts = new JPanel();
+		mitteRechts.setLayout(new GridBagLayout());
+		mitteRechts.add(nike3);
+		
+		imagePanel.add(mitteLinks);
+		imagePanel.add(mitte);
+		imagePanel.add(mitteRechts);
 
 		beschreibung1.setText("Kurtzbeschreibung:			"
 				+ "				"
@@ -48,20 +61,20 @@ public class HomeMenu extends JFrame {
 				+ "Nike. Er wurde 1982 auf den Markt gebracht und "
 				+ "bekannt wurde er vor allem als Streetstyle-Schuh in der "
 				+ "Hip-Hop-Szene. Insgesamt wurden in den letzten 25 Jahren ueber 1.700 "
-				+ "Modelle in unzähligen verschiedenen Farb- und Materialkombinationen entwickelt.");
+				+ "Modelle in unzï¿½hligen verschiedenen Farb- und Materialkombinationen entwickelt.");
 		
 		beschreibung2.setText("Kurtzbeschreibung:			"
 				+ "				"
 				+ "Der Nike Air Huarache Essencial ist einer"
 				+ "dieser Schuhe, die einen starken Einfluss auf"
 				+ "die Erfolgsgeschichte mit dem Swoosh in den"
-				+ "frühen 90ern hatten und den Sportswear- und Sneaker");
+				+ "frï¿½hen 90ern hatten und den Sportswear- und Sneaker");
 		
 		beschreibung3.setText("Kurtzbeschreibung:			"
 				+ "				"
 				+ "Der Metcon 4 Maenner Cross Training, Gewichtheber-Schuh "
-				+ "bietet eine starke, stabile Basis, flexible Unterstützung "
-				+ "und extreme Haltbarkeit für eine breite Palette von "
+				+ "bietet eine starke, stabile Basis, flexible Unterstï¿½tzung "
+				+ "und extreme Haltbarkeit fï¿½r eine breite Palette von "
 				+ "Trainingsaktivitaeten, von Sprints und Schlitten druecken, Heben und Seilklettern.");
 		
 		beschreibung1.setLineWrap(true);

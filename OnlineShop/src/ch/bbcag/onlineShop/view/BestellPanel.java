@@ -1,9 +1,9 @@
 package ch.bbcag.onlineShop.view;
 
 import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -55,9 +55,7 @@ public class BestellPanel extends JFrame {
 		add(kundenInformationen);
 		
 		JPanel untenRechts = new JPanel();
-		untenRechts.setLayout(new BoxLayout(untenRechts, BoxLayout.Y_AXIS));
-		untenRechts.setAlignmentY(CENTER_ALIGNMENT);
-		bestellen.setAlignmentX(CENTER_ALIGNMENT);
+		untenRechts.setLayout(new GridBagLayout());
 		untenRechts.add(bestellen);
 		
 		add(untenRechts);
