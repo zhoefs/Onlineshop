@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -37,6 +39,23 @@ public class HomeMenu extends JFrame {
 		
 		JPanel ausloggenPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		ausloggenPanel.add(ausloggen);
+		
+		ausloggen.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Fenster fenster = new Fenster();
+				fenster.setSize(350, 120);
+				fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
+				fenster.setTitle("Anmeldung");
+				fenster.setResizable(false);
+				fenster.setLayout(new BorderLayout());
+				LoginPanel login = new LoginPanel(fenster);
+				fenster.add(login, BorderLayout.CENTER);
+				fenster.setVisible(true);
+				setVisible(false);
+			}
+		});
 
 		JPanel imagePanel = new JPanel(new GridLayout(3,3,3,3));
 
