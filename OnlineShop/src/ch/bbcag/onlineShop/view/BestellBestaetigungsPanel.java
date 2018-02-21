@@ -1,7 +1,10 @@
 package ch.bbcag.onlineShop.view;
 
+import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -33,10 +36,42 @@ public class BestellBestaetigungsPanel extends JFrame {
 		JPanel obenLinks = new JPanel();
 		obenLinks.setLayout(new GridBagLayout());
 		obenLinks.add(start);
+		
+		start.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				Fenster fenster = new Fenster();
+				fenster.setSize(350, 120);
+				fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
+				fenster.setTitle("Anmeldung");
+				fenster.setResizable(false);
+				fenster.setLayout(new BorderLayout());
+				LoginPanel login = new LoginPanel(fenster);
+				fenster.add(login, BorderLayout.CENTER);
+				fenster.setVisible(true);
+					setVisible(false);
+			}
+		});
+
 
 		JPanel obenRechts = new JPanel();
 		obenRechts.setLayout(new GridBagLayout());
 		obenRechts.add(weiterEinkaufen);
+		
+		weiterEinkaufen.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+					HomeMenu gui = new HomeMenu();
+					gui.pack();
+					gui.setResizable(false);
+					gui.setVisible(true);
+					setVisible(false);
+			}
+		});
 
 		oben.add(obenLinks);
 		oben.add(obenRechts);

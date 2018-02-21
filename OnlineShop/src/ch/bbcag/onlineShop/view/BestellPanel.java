@@ -3,6 +3,8 @@ package ch.bbcag.onlineShop.view;
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -57,6 +59,18 @@ public class BestellPanel extends JFrame {
 		JPanel untenRechts = new JPanel();
 		untenRechts.setLayout(new GridBagLayout());
 		untenRechts.add(bestellen);
+		
+		bestellen.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+					BestellBestaetigungsPanel gui = new BestellBestaetigungsPanel();
+					gui.setSize(500, 400);
+					gui.setResizable(false);
+					gui.setVisible(true);
+					setVisible(false);
+			}
+		});
 		
 		add(untenRechts);
 
