@@ -35,7 +35,4 @@ public class UserController {
 		}
 		return false;
 	}
-
-	// Metode VerifyLogin um die View zu teilen
-
 }
