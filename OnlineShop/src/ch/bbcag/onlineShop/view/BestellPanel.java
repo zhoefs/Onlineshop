@@ -1,5 +1,6 @@
 package ch.bbcag.onlineShop.view;
 
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -44,6 +45,24 @@ public class BestellPanel extends JFrame {
 		JPanel ausloggenPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		ausloggenPanel.add(ausloggen);
 		obenRechts.add(ausloggenPanel);
+		
+		ausloggen.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				Fenster fenster = new Fenster();
+				fenster.setSize(350, 120);
+				fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
+				fenster.setTitle("Anmeldung");
+				fenster.setResizable(false);
+				fenster.setLayout(new BorderLayout());
+				LoginPanel login = new LoginPanel(fenster);
+				fenster.add(login, BorderLayout.CENTER);
+				fenster.setVisible(true);
+				setVisible(false);
+			}
+		});
 
 		JPanel zahlungsPanel = new JPanel(new GridLayout(1, 2));
 
@@ -96,6 +115,8 @@ public class BestellPanel extends JFrame {
 		});
 
 		add(untenRechts);
+		
+		
 
 	}
 }
