@@ -1,5 +1,6 @@
 package ch.bbcag.onlineShop.view;
 
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -97,6 +98,36 @@ public class DesignPanel extends JFrame {
 				gui.setVisible(true);
 				setVisible(false);
 		}
+		});
+		ausloggen.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				Fenster fenster = new Fenster();
+				fenster.setSize(350, 120);
+				fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
+				fenster.setTitle("Anmeldung");
+				fenster.setResizable(false);
+				fenster.setLayout(new BorderLayout());
+				LoginPanel login = new LoginPanel(fenster);
+				fenster.add(login, BorderLayout.CENTER);
+				fenster.setVisible(true);
+				setVisible(false);
+			}
+		});
+		
+		uebernehmen.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (((String)farbteil1.getSelectedItem()).equals((String)farbteil2.getSelectedItem())){
+					System.err.println("Es darf nicht 2 Mal die gleiche Farbe ausgewählt sein.");
+				} else {
+					//TODO: Entsprechendes Bild und Infos laden.
+				}
+			
+			}
 		});
 	}
 }
