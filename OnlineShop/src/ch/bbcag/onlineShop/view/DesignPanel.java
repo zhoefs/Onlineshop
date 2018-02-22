@@ -16,6 +16,7 @@ import ch.bbcag.onlineShop.view.HomeMenu;
 import ch.bbcag.onlineShop.helper.IconLoader;
 import ch.bbcag.onlineShop.model.Benutzer;
 
+
 public class DesignPanel extends JFrame {
 
 	private static final long serialVersionUID = 7107604425259214222L;
@@ -57,33 +58,30 @@ public class DesignPanel extends JFrame {
 		obenRechts.add(farbteil2Panel);
 
 		add(obenRechts);
+		HomeMenu sNr = new HomeMenu(benutzer);
+		switch(sNr.getShoeNr()) {
+		case 1:
+			
+			
+			
+			
+			kundenInformationen.setText("");
+			kundenInformationen.setLineWrap(true);
+			kundenInformationen.setWrapStyleWord(true);
+			
+		case 2:
+			
+			
+			
+			
+		case 3:
+			
+			
+			
+			
+		}
 		
-		/* if schuhmodelNr == 1{
-			kundenInformationen.setText("Die Air Force 1 (oder AF1 oder AF-1) hiess ursprünglich nur die Air Force. Der Name ist ein Verweis auf Air Force One, das Flugzeug,\r\n" + 
-				"das den Präsidenten der Vereinigten Staaten trägt. Die Schuhe werden in drei verschiedenen Stilen verkauft, niedrig, mittel und hoch.\r\n" + 
-				"Die Mitte kommt mit einem verbundenen Riemen. Die High-Top Air Force 1 sind mit einem Klettverschluss versehen. Der mittlere Obergurt\r\n" + 
-				"ist am Schuh befestigt, wäh"
-				+ "rend der Obergurt bei einigen Versionen beweglich und abnehmbar ist. Obwohl der Schuh in verschiedenen\r\n" + 
-				"Farben und Farbschemen erh�ltlich ist, sind die am h�ufigsten verkauften Air Force 1-Modelle solides Weiss\r\n" + 
-				"(auch als \"Weis auf Weis\" bezeichnet), wobei die zweithäufigste Farbe Schwarz (\"Schwarz auf Schwarz\") ist.");
-		} */
 		
-//		switch(getsNr) {
-//		case 1: sNr(1); break;
-//		case 2: sNr(2); break;
-//		case 3: sNr(2); break;
-//		}
-		
-		kundenInformationen.setText("Die Air Force 1 (oder AF1 oder AF-1) hiess ursprünglich nur die Air Force. Der Name ist ein Verweis auf Air Force One, das Flugzeug,\r\n" + 
-				"das den Präsidenten der Vereinigten Staaten trägt. Die Schuhe werden in drei verschiedenen Stilen verkauft, niedrig, mittel und hoch.\r\n" + 
-				"Die Mitte kommt mit einem verbundenen Riemen. Die High-Top Air Force 1 sind mit einem Klettverschluss versehen. Der mittlere Obergurt\r\n" + 
-				"ist am Schuh befestigt, wäh"
-				+ "rend der Obergurt bei einigen Versionen beweglich und abnehmbar ist. Obwohl der Schuh in verschiedenen\r\n" + 
-				"Farben und Farbschemen erh�ltlich ist, sind die am h�ufigsten verkauften Air Force 1-Modelle solides Weiss\r\n" + 
-				"(auch als \"Weis auf Weis\" bezeichnet), wobei die zweithäufigste Farbe Schwarz (\"Schwarz auf Schwarz\") ist.");
-		kundenInformationen.setLineWrap(true);
-		kundenInformationen.setWrapStyleWord(true);
-
 		JPanel untenRechts = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		add(kundenInformationen);
 		add(untenRechts);

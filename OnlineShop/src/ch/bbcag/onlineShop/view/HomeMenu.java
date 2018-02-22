@@ -26,7 +26,7 @@ public class HomeMenu extends JFrame {
 	private JTextArea beschreibung1 = new JTextArea(5,20);
 	private JTextArea beschreibung2 = new JTextArea(5,20);
 	private JTextArea beschreibung3 = new JTextArea(5,20);
-	public int sNr = 0;
+	public int shoeNr = 0;
 	
 	public static void main(String[] args) {
 		HomeMenu gui = new HomeMenu(null);
@@ -119,11 +119,12 @@ public class HomeMenu extends JFrame {
 		add(imagePanel, BorderLayout.CENTER);
 	}
 
-	public int getsNr() {
-		return sNr;
+	public int getShoeNr() {
+		return shoeNr;
 	}
 
-	public void setsNr(int sNr) {
-		this.sNr = sNr;
+	public void setShoeNr(int shoeNr) {
+		this.shoeNr = shoeNr;
 	}
+
 }
