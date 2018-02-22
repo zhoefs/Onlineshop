@@ -31,6 +31,7 @@ public class DesignPanel extends JPanel {
 	private int shoeNr;
 	private String farbCombi = "schwarz_weiss";
 	private JPanel picturePanel = new JPanel(new BorderLayout());
+	private String picture;
 
 	public DesignPanel(Benutzer benutzer, Fenster fenster, int shoeNr) {
 		setShoeNr(shoeNr);
@@ -66,7 +67,7 @@ public class DesignPanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fenster.switchJPanel(new BestellPanel(benutzer, fenster), "Bestätigung", 1200, 800);
+				fenster.switchJPanel(new BestellPanel(benutzer, fenster), "Bestätigung", 1100, 750);
 			}
 		});
 		ausloggen.addActionListener(new ActionListener() {
