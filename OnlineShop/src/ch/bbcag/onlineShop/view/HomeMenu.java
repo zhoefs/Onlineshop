@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import ch.bbcag.onlineShop.helper.IconLoader;
+import ch.bbcag.onlineShop.model.Benutzer;
 
 public class HomeMenu extends JFrame {
 
@@ -27,13 +28,13 @@ public class HomeMenu extends JFrame {
 	private JTextArea beschreibung3 = new JTextArea(5,20);
 	
 	public static void main(String[] args) {
-		HomeMenu gui = new HomeMenu();
+		HomeMenu gui = new HomeMenu(null);
 		gui.pack();
 		gui.setResizable(false);
 		gui.setVisible(true);
 	}
 
-	public HomeMenu() {
+	public HomeMenu(Benutzer benutzer) {
 		setTitle("Home Menu");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		

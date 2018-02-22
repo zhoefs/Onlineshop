@@ -12,6 +12,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import ch.bbcag.onlineShop.controller.UserController;
+import ch.bbcag.onlineShop.model.Benutzer;
 
 public class LoginPanel extends JPanel {
 
@@ -44,14 +45,15 @@ public class LoginPanel extends JPanel {
 
 		loginBtn = new JButton("Login");
 		registerBtn = new JButton("Registrieren");
-
+		
 		loginBtn.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("login : " + mail.getText() + ";" + new String(password.getPassword()));
 				if (controller.isValidLogin(mail.getText(), new String(password.getPassword()))) {
-					HomeMenu gui = new HomeMenu();
+					Benutzer benutzer = controller.getBenutzerByEmail(mail.getText());
+					HomeMenu gui = new HomeMenu(benutzer);
 					gui.pack();
 					gui.setResizable(false);
 					gui.setVisible(true);
