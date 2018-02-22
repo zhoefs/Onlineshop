@@ -65,7 +65,12 @@ public class DesignPanel extends JFrame {
 			
 			
 			
-			kundenInformationen.setText("");
+			kundenInformationen.setText("Die Air Force 1 (oder AF1 oder AF-1) hiess ursprünglich nur die Air Force. Der Name ist ein Verweis auf Air Force One, das Flugzeug,\r\n" + 
+					"das den Präsidenten der Vereinigten Staaten trägt. Die Schuhe werden in drei verschiedenen Stilen verkauft, niedrig, mittel und hoch.\r\n" + 
+					"Die Mitte kommt mit einem verbundenen Riemen. Die High-Top Air Force 1 sind mit einem Klettverschluss versehen. Der mittlere Obergurt\r\n" + 
+					"ist am Schuh befestigt, während der Obergurt bei einigen Versionen beweglich und abnehmbar ist. Obwohl der Schuh in verschiedenen\r\n" + 
+					"Farben und Farbschemen erh�ltlich ist, sind die am h�ufigsten verkauften Air Force 1-Modelle solides Weiss\r\n" + 
+					"(auch als \"Weis auf Weis\" bezeichnet), wobei die zweithäufigste Farbe Schwarz (\"Schwarz auf Schwarz\") ist.");
 			kundenInformationen.setLineWrap(true);
 			kundenInformationen.setWrapStyleWord(true);
 			
