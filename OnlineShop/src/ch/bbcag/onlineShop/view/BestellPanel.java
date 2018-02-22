@@ -64,7 +64,7 @@ public class BestellPanel extends JPanel {
 		obenRechts.add(zahlungsPanel);
 		add(obenRechts);
 		
-		kundenInformationen.append(benutzer.getName()+"\n"+benutzer.getAdresse().getStrasse()+"\n"+benutzer.getAdresse().getPlz()+" "+benutzer.getAdresse().getOrt());
+		kundenInformationen.append("Ihre Adresse:"+"\n"+benutzer.getName()+"\n"+benutzer.getAdresse().getStrasse()+"\n"+benutzer.getAdresse().getPlz()+" "+benutzer.getAdresse().getOrt());
 		add(kundenInformationen);
 		
 		kundenInformationen.setLineWrap(true);
@@ -86,7 +86,7 @@ public class BestellPanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fenster.switchJPanel(new HomeMenu(benutzer, fenster), "Home", 500, 400);
+				fenster.switchJPanel(new BestellBestaetigungsPanel(benutzer, fenster), "Bestätigung", 500, 400);
 			}
 		});
 
