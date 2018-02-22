@@ -98,7 +98,7 @@ public class RegisterPanel extends JPanel {
 		registerBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				if (mail.getText().matches("@") && name.getText() != "" && password.getText() != "" && wohnort.getText() != "" && strasse.getText() != "") {
+				if (!(mail.getText().matches("") && name.getText() == "" && password.getText() == "" && wohnort.getText() == "" && strasse.getText() == "")) {
 					Benutzer b = new Benutzer();
 					b.setEmail(mail.getText());
 					b.setName(name.getText());
