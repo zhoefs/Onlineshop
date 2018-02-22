@@ -26,16 +26,16 @@ public class BestellPanel extends JPanel {
 	private JTextArea beschreibung = new JTextArea(5, 20);
 	private JTextArea kundenInformationen = new JTextArea(5, 20);
 	static Benutzer benutzer = new Benutzer();
-	
+
 	public BestellPanel(Benutzer benutzer, Fenster fenster) {
-		
+
 		add(new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_weiss.PNG")));
-		
+
 		JPanel obenRechts = new JPanel(new GridLayout(2, 1));
 		JPanel ausloggenPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		ausloggenPanel.add(ausloggen);
 		obenRechts.add(ausloggenPanel);
-		
+
 		ausloggen.addActionListener(new ActionListener() {
 
 			@Override
@@ -63,23 +63,26 @@ public class BestellPanel extends JPanel {
 
 		obenRechts.add(zahlungsPanel);
 		add(obenRechts);
-		
-		kundenInformationen.append("Ihre Adresse:"+"\n"+benutzer.getName()+"\n"+benutzer.getAdresse().getStrasse()+"\n"+benutzer.getAdresse().getPlz()+" "+benutzer.getAdresse().getOrt());
+
+		kundenInformationen.append("Ihre Lieferadresse:" + "\n" + "\n" 
+				+ benutzer.getAdresse().getStrasse() + "\n" + benutzer.getAdresse().getPlz() + " "
+				+ benutzer.getAdresse().getOrt()+"\n"+"\n"+"\n"+"Kontakt: "+ benutzer.getEmail());
 		add(kundenInformationen);
-		
+
 		kundenInformationen.setLineWrap(true);
 		kundenInformationen.setWrapStyleWord(true);
 
 		JPanel untenRechts = new JPanel();
-		
-		JLabel untenRechtsBackgroundLabel = new JLabel(IconLoader.loadIcon("backgroundPictures/rote-pfeile-zugeschnitten.jpg"));
-		
+
+		JLabel untenRechtsBackgroundLabel = new JLabel(
+				IconLoader.loadIcon("backgroundPictures/rote-pfeile-zugeschnitten.jpg"));
+
 		untenRechtsBackgroundLabel.setLayout(null);
 		untenRechtsBackgroundLabel.setOpaque(false);
-		
+
 		untenRechtsBackgroundLabel.setLayout(new GridBagLayout());
 		untenRechtsBackgroundLabel.add(bestellen);
-		
+
 		untenRechts.add(untenRechtsBackgroundLabel);
 
 		bestellen.addActionListener(new ActionListener() {
@@ -91,8 +94,6 @@ public class BestellPanel extends JPanel {
 		});
 
 		add(untenRechts);
-		
-		
 
 	}
 }

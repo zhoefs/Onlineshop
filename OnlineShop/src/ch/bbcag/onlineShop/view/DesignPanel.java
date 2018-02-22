@@ -66,7 +66,7 @@ public class DesignPanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fenster.switchJPanel(new BestellPanel(benutzer, fenster), "Bestätigung", 1200, 800);
+				fenster.switchJPanel(new BestellPanel(benutzer, fenster), "Bestätigung", 1100, 750);
 			}
 		});
 		ausloggen.addActionListener(new ActionListener() {
