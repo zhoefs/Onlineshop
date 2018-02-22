@@ -6,7 +6,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -28,10 +27,10 @@ public class BestellPanel extends JFrame {
 	private JTextArea kundenInformationen = new JTextArea(5, 20);
 
 	public static void main(String[] args) {
-		BestellPanel gui = new BestellPanel();
-		gui.pack();
-		gui.setResizable(false);
-		gui.setVisible(true);
+		BestellPanel panel = new BestellPanel();
+		panel.pack();
+		panel.setResizable(false);
+		panel.setVisible(true);
 	}
 
 	public BestellPanel() {
@@ -91,6 +90,7 @@ public class BestellPanel extends JFrame {
 				gui.setSize(500, 400);
 				gui.setResizable(false);
 				gui.setVisible(true);
+				setVisible(false);
 				setVisible(false);
 			}
 		});
