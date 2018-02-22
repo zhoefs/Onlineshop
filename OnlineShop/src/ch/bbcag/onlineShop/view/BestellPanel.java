@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import ch.bbcag.onlineShop.helper.IconLoader;
+import ch.bbcag.onlineShop.model.Benutzer;
 
 public class BestellPanel extends JFrame {
 
@@ -26,15 +27,20 @@ public class BestellPanel extends JFrame {
 	private JComboBox<String> zahlungsarten = new JComboBox<String>(zahlungsartenListe);
 	private JTextArea beschreibung = new JTextArea(5, 20);
 	private JTextArea kundenInformationen = new JTextArea(5, 20);
-
+	static Benutzer benutzer = new Benutzer();
+	
 	public static void main(String[] args) {
-		BestellPanel panel = new BestellPanel();
+		benutzer.getAdresse().setStrasse("Strasse");
+		benutzer.getAdresse().setOrt("ORT");
+		benutzer.getAdresse().setPlz("PLZ");
+		benutzer.setName("NAME");
+		BestellPanel panel = new BestellPanel(benutzer);
 		panel.pack();
 		panel.setResizable(false);
 		panel.setVisible(true);
 	}
 
-	public BestellPanel() {
+	public BestellPanel(Benutzer benutzer) {
 		setTitle("Bestellung");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new GridLayout(2, 2));
@@ -83,7 +89,8 @@ public class BestellPanel extends JFrame {
 
 		obenRechts.add(zahlungsPanel);
 		add(obenRechts);
-
+		
+		kundenInformationen.append(benutzer.getName()+"\n"+benutzer.getAdresse().getStrasse()+"\n"+benutzer.getAdresse().getPlz()+" "+benutzer.getAdresse().getOrt());
 		add(kundenInformationen);
 		
 		kundenInformationen.setLineWrap(true);
@@ -105,7 +112,7 @@ public class BestellPanel extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BestellBestaetigungsPanel gui = new BestellBestaetigungsPanel();
+				BestellBestaetigungsPanel gui = new BestellBestaetigungsPanel(benutzer);
 				gui.setSize(500, 400);
 				gui.setResizable(false);
 				gui.setVisible(true);

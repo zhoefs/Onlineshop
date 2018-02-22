@@ -42,7 +42,6 @@ public class BenutzerJdbcDao implements BenutzerDao {
 			}
 		}
 	}
-
 	@Override
 	public Benutzer findBenutzerByEmail(String email) {
 		String sql = "select * from onlineshop.benutzer where email = ?";
@@ -85,3 +84,4 @@ public class BenutzerJdbcDao implements BenutzerDao {
 		}
 	}
 }
+

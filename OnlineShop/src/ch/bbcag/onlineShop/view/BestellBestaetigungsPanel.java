@@ -11,6 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import ch.bbcag.onlineShop.model.Benutzer;
+
 public class BestellBestaetigungsPanel extends JFrame {
 
 	private static final long serialVersionUID = 7107604425259214222L;
@@ -19,13 +21,13 @@ public class BestellBestaetigungsPanel extends JFrame {
 	private JTextArea vielenDank = new JTextArea(5, 20);
 
 	public static void main(String[] args) {
-		BestellBestaetigungsPanel gui = new BestellBestaetigungsPanel();
+		BestellBestaetigungsPanel gui = new BestellBestaetigungsPanel(null);
 		gui.setSize(500, 400);
 		gui.setResizable(false);
 		gui.setVisible(true);
 	}
 
-	public BestellBestaetigungsPanel() {
+	public BestellBestaetigungsPanel(Benutzer benutzer) {
 		setTitle("Bestellbestätigung");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -65,7 +67,7 @@ public class BestellBestaetigungsPanel extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-					HomeMenu gui = new HomeMenu();
+					HomeMenu gui = new HomeMenu(benutzer);
 					gui.pack();
 					gui.setResizable(false);
 					gui.setVisible(true);

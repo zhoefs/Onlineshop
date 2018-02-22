@@ -113,7 +113,7 @@ public class RegisterPanel extends JPanel {
 					
 					System.out.println("Registrierung abgeschlossen");
 					
-					HomeMenu gui = new HomeMenu();
+					HomeMenu gui = new HomeMenu(b);
 					gui.pack();
 					gui.setResizable(false);
 					gui.setVisible(true);
