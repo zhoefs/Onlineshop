@@ -48,7 +48,7 @@ public class RegisterPanel extends JPanel {
 	JTextField mail;
 	JPasswordField password;
 	JTextField plz;
-	
+
 	public RegisterPanel(Fenster fenster) {
 		this.setLayout(new BorderLayout());
 
@@ -84,11 +84,11 @@ public class RegisterPanel extends JPanel {
 		this.leftTextFieldsPanel.add(name);
 		this.leftTextFieldsPanel.add(wohnort);
 		this.leftTextFieldsPanel.add(strasse);
-		
+
 		this.rightLabelPanel.add(plzLabel);
 		this.rightLabelPanel.add(mailLabel);
 		this.rightLabelPanel.add(passwordLabel);
-		
+
 		this.rightTextFieldsPanel.add(plz);
 		this.rightTextFieldsPanel.add(mail);
 		this.rightTextFieldsPanel.add(password);
@@ -98,7 +98,8 @@ public class RegisterPanel extends JPanel {
 		registerBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				if (!(mail.getText().matches("") && name.getText() == "" && password.getText() == "" && wohnort.getText() == "" && strasse.getText() == "")) {
+				if (!(mail.getText().matches("") && name.getText() == "" && password.getText() == ""
+						&& wohnort.getText() == "" && strasse.getText() == "")) {
 					Benutzer b = new Benutzer();
 					b.setEmail(mail.getText());
 					b.setName(name.getText());
@@ -108,24 +109,17 @@ public class RegisterPanel extends JPanel {
 					a.setStrasse(strasse.getText());
 					a.setPlz(plz.getText());
 					b.setAdresse(a);
-					UserController.getController().registerBenutzer(b);	
-					
-					
+					UserController.getController().registerBenutzer(b);
+
 					System.out.println("Registrierung abgeschlossen");
-					
-					HomeMenu gui = new HomeMenu(b);
-					gui.pack();
-					gui.setResizable(false);
-					gui.setVisible(true);
-					fenster.setVisible(false);
+
+					fenster.switchJPanel(new HomeMenu(b, fenster), "Home", 1200, 800);
 				} else {
 					System.out.println("Registrierung ist entweder unvollständig oder die Email ist nicht Valide");
-					
+
 				}
 			}
 		});
-		
-		
 
 		this.contentPanelLeft.add(leftLabelPanel);
 		this.contentPanelLeft.add(leftTextFieldsPanel);

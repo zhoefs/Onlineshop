@@ -17,7 +17,7 @@ import javax.swing.JTextArea;
 import ch.bbcag.onlineShop.helper.IconLoader;
 import ch.bbcag.onlineShop.model.Benutzer;
 
-public class BestellPanel extends JFrame {
+public class BestellPanel extends JPanel {
 
 	private static final long serialVersionUID = 7107604425259214222L;
 
@@ -29,24 +29,10 @@ public class BestellPanel extends JFrame {
 	private JTextArea kundenInformationen = new JTextArea(5, 20);
 	static Benutzer benutzer = new Benutzer();
 	
-	public static void main(String[] args) {
-		benutzer.getAdresse().setStrasse("Strasse");
-		benutzer.getAdresse().setOrt("ORT");
-		benutzer.getAdresse().setPlz("PLZ");
-		benutzer.setName("NAME");
-		BestellPanel panel = new BestellPanel(benutzer);
-		panel.pack();
-		panel.setResizable(false);
-		panel.setVisible(true);
-	}
-
-	public BestellPanel(Benutzer benutzer) {
-		setTitle("Bestellung");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLayout(new GridLayout(2, 2));
-
+	public BestellPanel(Benutzer benutzer, Fenster fenster) {
+		
 		add(new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_weiss.PNG")));
-
+		
 		JPanel obenRechts = new JPanel(new GridLayout(2, 1));
 		JPanel ausloggenPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		ausloggenPanel.add(ausloggen);
@@ -56,17 +42,7 @@ public class BestellPanel extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				Fenster fenster = new Fenster();
-				fenster.setSize(350, 120);
-				fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
-				fenster.setTitle("Anmeldung");
-				fenster.setResizable(false);
-				fenster.setLayout(new BorderLayout());
-				LoginPanel login = new LoginPanel(fenster);
-				fenster.add(login, BorderLayout.CENTER);
-				fenster.setVisible(true);
-				setVisible(false);
+				fenster.switchJPanel(new LoginPanel(fenster), "Login", 350, 120);
 			}
 		});
 
@@ -112,12 +88,7 @@ public class BestellPanel extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BestellBestaetigungsPanel gui = new BestellBestaetigungsPanel(benutzer);
-				gui.setSize(500, 400);
-				gui.setResizable(false);
-				gui.setVisible(true);
-				setVisible(false);
-				setVisible(false);
+				fenster.switchJPanel(new HomeMenu(benutzer, fenster), "Home", 500, 400);
 			}
 		});
 

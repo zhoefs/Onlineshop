@@ -45,7 +45,7 @@ public class LoginPanel extends JPanel {
 
 		loginBtn = new JButton("Login");
 		registerBtn = new JButton("Registrieren");
-		
+
 		loginBtn.addActionListener(new ActionListener() {
 
 			@Override
@@ -53,13 +53,9 @@ public class LoginPanel extends JPanel {
 				System.out.println("login : " + mail.getText() + ";" + new String(password.getPassword()));
 				if (controller.isValidLogin(mail.getText(), new String(password.getPassword()))) {
 					Benutzer benutzer = controller.getBenutzerByEmail(mail.getText());
-					HomeMenu gui = new HomeMenu(benutzer);
-					gui.pack();
-					gui.setResizable(false);
-					gui.setVisible(true);
-					fenster.setVisible(false);
+					fenster.switchJPanel(new HomeMenu(benutzer, fenster), "Home", 1200, 800);
+
 				} else {
-					// TODO: Fehler auf GUI darstellen.
 					fehlerAnzeige.setText("Mail oder Passwort ist ungültig.");
 					north.add(fehlerAnzeige);
 					System.err.println("Login for " + mail.getText() + " failed!");
@@ -70,7 +66,6 @@ public class LoginPanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				revalidate();
 				fenster.switchJPanel(new RegisterPanel(fenster), "Registrierung", 950, 220);
 			}
 		});

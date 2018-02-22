@@ -21,13 +21,11 @@ public class Fenster extends JFrame {
 		Fenster fenster = new Fenster();
 		fenster.setSize(350, 120);
 		fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		//fenster.setLocationRelativeTo(null);
 		fenster.setTitle("Anmeldung");
 		fenster.setResizable(false);
 		fenster.setLayout(new BorderLayout());
 		LoginPanel login = new LoginPanel(fenster);
 		fenster.add(login, BorderLayout.CENTER);
 		fenster.setVisible(true);
-
 	}
 }

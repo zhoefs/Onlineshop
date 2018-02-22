@@ -8,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -16,7 +15,7 @@ import javax.swing.JTextArea;
 import ch.bbcag.onlineShop.helper.IconLoader;
 import ch.bbcag.onlineShop.model.Benutzer;
 
-public class HomeMenu extends JFrame {
+public class HomeMenu extends JPanel {
 
 	private static final long serialVersionUID = 7107604425259214222L;
 	private JButton ausloggen = new JButton("Ausloggen");
@@ -26,18 +25,10 @@ public class HomeMenu extends JFrame {
 	private JTextArea beschreibung1 = new JTextArea(5,20);
 	private JTextArea beschreibung2 = new JTextArea(5,20);
 	private JTextArea beschreibung3 = new JTextArea(5,20);
-	public int shoeNr = 0;
-	
-	public static void main(String[] args) {
-		HomeMenu gui = new HomeMenu(null);
-		gui.pack();
-		gui.setResizable(false);
-		gui.setVisible(true);
-	}
 
-	public HomeMenu(Benutzer benutzer) {
-		setTitle("Home Menu");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	public HomeMenu(Benutzer benutzer, Fenster fenster) {
+		setLayout(new BorderLayout());
+		
 		
 		JPanel ausloggenPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		ausloggenPanel.add(ausloggen);
@@ -46,18 +37,34 @@ public class HomeMenu extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Fenster fenster = new Fenster();
-				fenster.setSize(350, 120);
-				fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
-				fenster.setTitle("Anmeldung");
-				fenster.setResizable(false);
-				fenster.setLayout(new BorderLayout());
-				LoginPanel login = new LoginPanel(fenster);
-				fenster.add(login, BorderLayout.CENTER);
-				fenster.setVisible(true);
-				setVisible(false);
+				fenster.switchJPanel(new LoginPanel(fenster), "Login", 350, 120);
 			}
 		});
+		
+		nike1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				fenster.switchJPanel(new DesignPanel(benutzer, fenster, 1), "Design", 1200, 800);
+			}
+		});
+		
+		nike2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				fenster.switchJPanel(new DesignPanel(benutzer, fenster, 2), "Design", 1200, 800);
+			}
+		});
+		
+		nike3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				fenster.switchJPanel(new DesignPanel(benutzer, fenster, 3), "Design", 1200, 800);
+			}
+		});
+
 
 		JPanel imagePanel = new JPanel(new GridLayout(3,3,3,3));
 
@@ -118,13 +125,4 @@ public class HomeMenu extends JFrame {
 		add(ausloggenPanel, BorderLayout.NORTH);
 		add(imagePanel, BorderLayout.CENTER);
 	}
-
-	public int getShoeNr() {
-		return shoeNr;
-	}
-
-	public void setShoeNr(int shoeNr) {
-		this.shoeNr = shoeNr;
-	}
-
 }
