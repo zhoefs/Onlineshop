@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import ch.bbcag.onlineShop.view.HomeMenu;
 import ch.bbcag.onlineShop.helper.IconLoader;
+import ch.bbcag.onlineShop.model.Benutzer;
 
 public class DesignPanel extends JFrame {
 
@@ -29,13 +30,13 @@ public class DesignPanel extends JFrame {
 	private JTextArea kundenInformationen = new JTextArea(5, 20);
 
 	public static void main(String[] args) {
-		DesignPanel gui = new DesignPanel();
+		DesignPanel gui = new DesignPanel(null);
 		gui.pack();
 		gui.setResizable(false);
 		gui.setVisible(true);
 	}
 
-	public DesignPanel() {
+	public DesignPanel(Benutzer benutzer) {
 		setTitle("Design");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new GridLayout(2, 3));
@@ -97,7 +98,7 @@ public class DesignPanel extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-				BestellPanel gui = new BestellPanel();
+				BestellPanel gui = new BestellPanel(benutzer);
 				gui.setSize(1155, 739);
 				gui.setResizable(false);
 				gui.setVisible(true);
