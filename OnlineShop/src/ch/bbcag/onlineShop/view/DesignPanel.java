@@ -29,9 +29,9 @@ public class DesignPanel extends JPanel {
 	private JComboBox<String> farbteil2 = new JComboBox<String>(farbteil2Liste);
 	private JTextArea kundenInformationen = new JTextArea(5, 20);
 	private int shoeNr;
+	private int sevNr;
 	private String farbCombi = "schwarz_weiss";
 	private JPanel picturePanel = new JPanel(new BorderLayout());
-	private String picture;
 
 	public DesignPanel(Benutzer benutzer, Fenster fenster, int shoeNr) {
 		setShoeNr(shoeNr);
@@ -67,7 +67,7 @@ public class DesignPanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fenster.switchJPanel(new BestellPanel(benutzer, fenster), "Bestätigung", 1100, 750);
+				fenster.switchJPanel(new BestellPanel(benutzer, fenster, getSevNr()), "Bestätigung", 1100, 750);
 			}
 		});
 		ausloggen.addActionListener(new ActionListener() {
@@ -100,27 +100,35 @@ public class DesignPanel extends JPanel {
 			switch (farbCombi) {
 			case "schwarz_weiss":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_weiss.PNG"));
+				sevNr = 1;
 				break;
 			case "schwarz_grau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_grau.PNG"));
+				sevNr = 2;
 				break;
 			case "schwarz_blau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_blau.PNG"));
+				sevNr = 3;
 				break;
 			case "schwarz_rot":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_rot.PNG"));
+				sevNr = 4;
 				break;
 			case "weiss_schwarz":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_schwarz.PNG"));
+				sevNr = 5;
 				break;
 			case "weiss_grau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_grau.PNG"));
+				sevNr = 6;
 				break;
 			case "weiss_blau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_blau.PNG"));
+				sevNr = 7;
 				break;
 			case "weiss_rot":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_rot.PNG"));
+				sevNr = 8;
 				break;
 			}
 
@@ -137,27 +145,35 @@ public class DesignPanel extends JPanel {
 			switch (farbCombi) {
 			case "schwarz_weiss":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_weiss.PNG"));
+				sevNr = 9;
 				break;
 			case "schwarz_grau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_grau.PNG"));
+				sevNr = 10;
 				break;
 			case "schwarz_blau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_blau.PNG"));
+				sevNr = 11;
 				break;
 			case "schwarz_rot":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_rot.PNG"));
+				sevNr = 12;
 				break;
 			case "weiss_schwarz":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_schwarz.PNG"));
+				sevNr = 13;
 				break;
 			case "weiss_grau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_grau.PNG"));
+				sevNr = 14;
 				break;
 			case "weiss_blau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_blau.PNG"));
+				sevNr = 15;
 				break;
 			case "weiss_rot":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_rot.PNG"));
+				sevNr = 16;
 				break;
 			}
 
@@ -172,27 +188,35 @@ public class DesignPanel extends JPanel {
 			switch (farbCombi) {
 			case "schwarz_weiss":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_weiss.PNG"));
+				sevNr = 17;
 				break;
 			case "schwarz_grau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_grau.PNG"));
+				sevNr = 18;
 				break;
 			case "schwarz_blau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_blau.PNG"));
+				sevNr = 19;
 				break;
 			case "schwarz_rot":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_rot.PNG"));
+				sevNr = 20;
 				break;
 			case "weiss_schwarz":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_schwarz.PNG"));
+				sevNr = 21;
 				break;
 			case "weiss_grau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Metcon_4/weiss_grau.PNG"));
+				sevNr = 22;
 				break;
 			case "weiss_blau":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_blau.PNG"));
+				sevNr = 23;
 				break;
 			case "weiss_rot":
 				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_rot.PNG"));
+				sevNr = 24;
 				break;
 			}
 
@@ -217,5 +241,9 @@ public class DesignPanel extends JPanel {
 
 	public void setShoeNr(int shoeNr) {
 		this.shoeNr = shoeNr;
+	}
+
+	public int getSevNr() {
+		return sevNr;
 	}
 }
