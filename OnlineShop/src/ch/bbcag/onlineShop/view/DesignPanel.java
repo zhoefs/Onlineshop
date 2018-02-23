@@ -84,7 +84,11 @@ public class DesignPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (((String) farbteil1.getSelectedItem()).equals((String) farbteil2.getSelectedItem())) {
 					System.err.println("Es darf nicht 2 Mal die gleiche Farbe ausgewählt sein.");
-				} else {
+				} else if (((String) farbteil1.getSelectedItem()) == "Erste Farbe wählen" || ((String) farbteil2.getSelectedItem()) == "Zweite Farbe wählen") {
+					System.err.println("Sie müssen bei beiden Auswahlen eine Farbe auswählen!");
+					
+					
+				}else {
 					farbCombi = (String) farbteil1.getSelectedItem() + "_" + (String) farbteil2.getSelectedItem();
 					updatePicture();
 				}
