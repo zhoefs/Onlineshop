@@ -207,7 +207,7 @@ public class DesignPanel extends JPanel {
 				sevNr = 21;
 				break;
 			case "weiss_grau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Metcon_4/weiss_grau.PNG"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_grau.PNG"));
 				sevNr = 22;
 				break;
 			case "weiss_blau":
