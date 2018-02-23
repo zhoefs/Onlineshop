@@ -100,7 +100,7 @@ public class BestellPanel extends JPanel {
 			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_schwarz.PNG"));
 			break;
 		case 22:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Metcon_4/weiss_grau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_grau.PNG"));
 			break;
 		case 23:
 			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_blau.PNG"));
