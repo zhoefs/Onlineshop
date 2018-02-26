@@ -12,6 +12,10 @@ public class BenutzerJdbcDao implements BenutzerDao {
 
 	private AdresseDao adresseDao = new AdresseJdbcDao();
 
+	/**
+	 * Findet ein Benutzer anhand der Email Adresse....
+	 * @return null: Wenn Bneutzer nicht existiert.
+	 */
 	@Override
 	public void insertBenutzer(Benutzer benutzer) {
 		// insert address

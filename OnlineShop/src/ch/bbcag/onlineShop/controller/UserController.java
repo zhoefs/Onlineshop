@@ -23,7 +23,9 @@ public class UserController {
 	public void registerBenutzer(Benutzer benutzer) {
 		benutzerDao.insertBenutzer(benutzer);
 	}
-
+	
+	
+	
 	public boolean isValidLogin(String username, String password) {
 		Benutzer benutzer = getBenutzerByEmail(username);
 		if (benutzer != null && username != null && password != null) {
