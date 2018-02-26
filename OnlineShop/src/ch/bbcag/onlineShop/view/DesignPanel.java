@@ -57,8 +57,7 @@ public class DesignPanel extends JPanel {
 		add(obenRechts);
 		JPanel untenRechts = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		add(untenRechts);
-
-		JPanel untenLinks = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		
 		untenRechts.add(uebernehmen);
 		untenRechts.setLayout(new GridBagLayout());
 		untenRechts.add(weiter);

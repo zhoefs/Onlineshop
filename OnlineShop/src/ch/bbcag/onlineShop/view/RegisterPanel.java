@@ -96,6 +96,7 @@ public class RegisterPanel extends JPanel {
 		registerBtn = new JButton("Registrieren");
 
 		registerBtn.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				if (!(mail.getText().matches("") && name.getText() == "" && password.getText() == ""
