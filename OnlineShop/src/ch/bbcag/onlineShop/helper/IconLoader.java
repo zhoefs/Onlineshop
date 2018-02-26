@@ -16,10 +16,10 @@ public class IconLoader {
 	 */
 	public static Icon loadIcon(String iconName) {
 		final URL resource = IconLoader.class.getResource("/images/" + iconName);
-		System.out.println("Requested file: " + "/OnlineShop/resources/images/" + iconName);
+		System.out.println("Requested file: " + "/images/" + iconName);
 
 		if (resource == null) {
-			System.err.println("Error in " + IconLoader.class.getName() + ": Icon OnlineShop/resources/images/"
+			System.err.println("Error in " + IconLoader.class.getName() + ": Icon /images/"
 					+ iconName + " could not be loaded.");
 			return new ImageIcon();
 		}

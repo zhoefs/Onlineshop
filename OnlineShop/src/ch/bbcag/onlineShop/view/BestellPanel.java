@@ -37,76 +37,76 @@ public class BestellPanel extends JPanel {
 
 		switch (sevNr) {
 		case 1:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_weiss.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_weiss.png"));
 			break;
 		case 2:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_grau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_grau.png"));
 			break;
 		case 3:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_blau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_blau.png"));
 			break;
 		case 4:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_rot.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_rot.png"));
 			break;
 		case 5:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_schwarz.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_schwarz.png"));
 			break;
 		case 6:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_grau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_grau.png"));
 			break;
 		case 7:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_blau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_blau.png"));
 			break;
 		case 8:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_rot.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_rot.png"));
 			break;
 		case 9:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_weiss.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_weiss.png"));
 			break;
 		case 10:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_grau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_grau.png"));
 			break;
 		case 11:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_blau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_blau.png"));
 			break;
 		case 12:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_rot.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_rot.png"));
 			break;
 		case 13:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_schwarz.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_schwarz.png"));
 			break;
 		case 14:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_grau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_grau.png"));
 			break;
 		case 15:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_blau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_blau.png"));
 			break;
 		case 16:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_rot.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_rot.png"));
 			break;
 		case 17:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_weiss.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_weiss.png"));
 			break;
 		case 18:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_grau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_grau.png"));
 			break;
 		case 19:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_blau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_blau.png"));
 			break;
 		case 20:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_rot.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_rot.png"));
 			break;
 		case 21:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_schwarz.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_schwarz.png"));
 			break;
 		case 22:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_grau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_grau.png"));
 			break;
 		case 23:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_blau.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_blau.png"));
 			break;
 		case 24:
-			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_rot.PNG"));
+			picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_rot.png"));
 			break;
 
 		}
