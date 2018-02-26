@@ -57,7 +57,8 @@ public class DesignPanel extends JPanel {
 		add(obenRechts);
 		JPanel untenRechts = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		add(untenRechts);
-		
+
+		JPanel untenLinks = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		untenRechts.add(uebernehmen);
 		untenRechts.setLayout(new GridBagLayout());
 		untenRechts.add(weiter);
@@ -102,35 +103,35 @@ public class DesignPanel extends JPanel {
 		case 1:
 			switch (farbCombi) {
 			case "schwarz_weiss":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_weiss.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_weiss.PNG"));
 				sevNr = 1;
 				break;
 			case "schwarz_grau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_grau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_grau.PNG"));
 				sevNr = 2;
 				break;
 			case "schwarz_blau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_blau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_blau.PNG"));
 				sevNr = 3;
 				break;
 			case "schwarz_rot":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_rot.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/schwarz_rot.PNG"));
 				sevNr = 4;
 				break;
 			case "weiss_schwarz":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_schwarz.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_schwarz.PNG"));
 				sevNr = 5;
 				break;
 			case "weiss_grau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_grau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_grau.PNG"));
 				sevNr = 6;
 				break;
 			case "weiss_blau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_blau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_blau.PNG"));
 				sevNr = 7;
 				break;
 			case "weiss_rot":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_rot.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Force_1_MID/weiss_rot.PNG"));
 				sevNr = 8;
 				break;
 			}
@@ -147,35 +148,35 @@ public class DesignPanel extends JPanel {
 		case 2:
 			switch (farbCombi) {
 			case "schwarz_weiss":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_weiss.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_weiss.PNG"));
 				sevNr = 9;
 				break;
 			case "schwarz_grau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_grau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_grau.PNG"));
 				sevNr = 10;
 				break;
 			case "schwarz_blau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_blau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_blau.PNG"));
 				sevNr = 11;
 				break;
 			case "schwarz_rot":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_rot.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/schwarz_rot.PNG"));
 				sevNr = 12;
 				break;
 			case "weiss_schwarz":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_schwarz.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_schwarz.PNG"));
 				sevNr = 13;
 				break;
 			case "weiss_grau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_grau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_grau.PNG"));
 				sevNr = 14;
 				break;
 			case "weiss_blau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_blau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_blau.PNG"));
 				sevNr = 15;
 				break;
 			case "weiss_rot":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_rot.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Air_Hurache_Essential/weiss_rot.PNG"));
 				sevNr = 16;
 				break;
 			}
@@ -190,35 +191,35 @@ public class DesignPanel extends JPanel {
 		case 3:
 			switch (farbCombi) {
 			case "schwarz_weiss":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_weiss.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_weiss.PNG"));
 				sevNr = 17;
 				break;
 			case "schwarz_grau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_grau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_grau.PNG"));
 				sevNr = 18;
 				break;
 			case "schwarz_blau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_blau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_blau.PNG"));
 				sevNr = 19;
 				break;
 			case "schwarz_rot":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_rot.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/schwarz_rot.PNG"));
 				sevNr = 20;
 				break;
 			case "weiss_schwarz":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_schwarz.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_schwarz.PNG"));
 				sevNr = 21;
 				break;
 			case "weiss_grau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_grau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_grau.PNG"));
 				sevNr = 22;
 				break;
 			case "weiss_blau":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_blau.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_blau.PNG"));
 				sevNr = 23;
 				break;
 			case "weiss_rot":
-				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_rot.png"));
+				picture = new JLabel(IconLoader.loadIcon("Nike_Metcon_4/weiss_rot.PNG"));
 				sevNr = 24;
 				break;
 			}

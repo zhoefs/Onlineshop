@@ -27,8 +27,7 @@ public class LoginPanel extends JPanel {
 
 	public LoginPanel(Fenster fenster) {
 		this.setLayout(new BorderLayout());
-		
-		// Hier werden die Layouts gesetzt.
+
 		JPanel west = new JPanel(new GridLayout(2, 1));
 		JPanel east = new JPanel(new GridLayout(2, 1));
 		JPanel south = new JPanel(new GridLayout(1, 2));
@@ -36,8 +35,7 @@ public class LoginPanel extends JPanel {
 
 		west.add(new JLabel("Mail"), BorderLayout.NORTH);
 		west.add(new JLabel("Passwort"), BorderLayout.SOUTH);
-		
-		// Setzen
+
 		mail = new JTextField(20);
 		password = new JPasswordField(20);
 		fehlerAnzeige = new JLabel();
